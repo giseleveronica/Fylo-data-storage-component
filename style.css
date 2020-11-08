@@ -13,17 +13,21 @@ body{
   background-position: center bottom;
   font-family: "Raleway", sans-serif;
   margin: 0;
+
+  min-width: 400px;
 }
 
 p{
-  color: hsl(243, 100%, 93%)
+  color: hsl(243, 100%, 93%);
 }
 
 .container{
   height: 100vh;
+  overflow: hidden;
 
   align-content: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -124,9 +128,16 @@ p{
   background-color: white;
   border-radius: 10px;
   height: 80px;
-  margin-bottom: 200px;
   right: 300px;
   width: 200px;
+
+  position: absolute;
+  margin: auto;
+  
+  left: 0;
+  bottom: 0;
+  right: -650px;
+  top: -250px;
 
   align-content: center;
   align-items: center;
@@ -138,7 +149,7 @@ p{
   border-bottom: 40px solid transparent;
   border-right: 30px solid white;
   content: " ";
-  margin-left: 131.7px;
+  margin-left: 170px;
   margin-top: 85.04px;
   position: absolute;
 }
@@ -155,9 +166,7 @@ p{
 }
 
 .credits{
-  bottom: 10px;
-  display: inline-block;
-  position: absolute;
+  margin: 25px auto 10px auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -165,19 +174,14 @@ p{
     background: hsl(229, 57%, 11%) url(images/bg-mobile.png) no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    overflow: hidden;
-
-    display: flex;
-    align-content: center;
-    justify-content: center;
   }
 
   .container{
-    display: block;
+    flex-direction: column;
   }
 
   .mid{
-    display: inline-block;
+    flex-direction: column;
   }
 
   .left{
@@ -190,21 +194,31 @@ p{
   }
 
   .popup-msg{
+    margin-top: -20px;
     position: relative;
-    right: 80px;
-    top: 200px;
+    top: 0;
   }
 
   .popup-msg::after{
     display: none;
   }
 
-  .credits{
-    display: block;
-  }
-
   .link{
     text-align: center;
     font-size: 12.85px;
   }
+
+  @media screen and (max-height: 585px){
+    .container{
+      background: hsl(229, 57%, 11%) url(images/bg-mobile.png) no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+
+      height: 100%;
+      overflow-x: auto;
+    }
+
+    .mid{
+      overflow: hidden;
+    }
 }
