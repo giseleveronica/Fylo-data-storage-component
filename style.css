@@ -14,7 +14,12 @@ body{
   font-family: "Raleway", sans-serif;
   margin: 0;
 
-  min-width: 352px;
+  min-width: 350px;
+  height: 100%;
+}
+
+html{
+  height: 100%;
 }
 
 p{
@@ -22,7 +27,7 @@ p{
 }
 
 .container{
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 
   align-content: center;
@@ -171,17 +176,23 @@ p{
 
 @media screen and (max-width: 1000px) {
   body {
-    background: hsl(229, 57%, 11%) url(images/bg-mobile.png) no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
+    min-height: 700px;
   }
 
   .container{
+    background: hsl(229, 57%, 11%) url(images/bg-mobile.png) no-repeat;
+    background-size: 100% 100%;
+
+    height: 100%;
+    width: 100%;
     flex-direction: column;
+
+    overflow: auto;
   }
 
   .mid{
     flex-direction: column;
+    overflow: hidden;
   }
 
   .left{
@@ -207,24 +218,4 @@ p{
     text-align: center;
     font-size: 12.85px;
   }
-
-  @media screen and (max-height: 585px){
-    .html{
-      height: 100vh;
-      width: 100vh;
-    }
-
-    .container{
-      background: hsl(229, 57%, 11%) url(images/bg-mobile.png) no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
-
-      height: 100%;
-      overflow: auto;
-      width: 100%;
-    }
-
-    .mid{
-      overflow: hidden;
-    }
 }
