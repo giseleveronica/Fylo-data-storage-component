@@ -171,7 +171,7 @@ p{
 }
 
 .credits{
-  margin: 25px auto 10px auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -217,5 +217,9 @@ p{
   .link{
     text-align: center;
     font-size: 12.85px;
+  }
+
+  .credits{
+    margin: 25px auto 10px auto;
   }
 }
